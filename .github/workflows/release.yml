@@ -29,9 +29,12 @@ jobs:
             RemoveChristmasChests-${{ github.event.inputs.version }}.zip
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
+          modrinth-id: ${{ secrets.MODRINTH_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: ${{ secrets.CURSEFORGE_ID }}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           loaders: minecraft
+          version: ${{ github.event.inputs.version }}
           version-type: release
           files: |
             RemoveChristmasChests-${{ github.event.inputs.version }}.zip
