@@ -31,8 +31,8 @@ jobs:
         with:
           name: Remove Christmas Chests for ${{ github.event.inputs.version }}
 
-#          curseforge-id: ${{ secrets.CURSEFORGE_ID }}
-#          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          curseforge-id: ${{ secrets.CURSEFORGE_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           modrinth-id: ${{ secrets.MODRINTH_ID }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           loaders: minecraft
