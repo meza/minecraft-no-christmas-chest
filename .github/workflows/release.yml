@@ -16,7 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: montudor/action-zip@v1
-        run: zip -qq -r RemoveChristmasChests-${{ github.event.inputs.version }}.zip "Remove Christmas Chests"
+        with:
+          args: zip -qq -r RemoveChristmasChests-${{ github.event.inputs.version }}.zip "Remove Christmas Chests"
         name: Zip up the pack
       - name: Save the zip as an artifact
         uses: actions/upload-artifact@v3
