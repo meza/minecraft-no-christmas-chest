@@ -33,5 +33,7 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           loaders: minecraft
           version-type: release
+          files: |
+            RemoveChristmasChests-${{ github.event.inputs.version }}.zip
           game-version: |
             >=${{ github.event.inputs.version }}
