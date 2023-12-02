@@ -1,6 +1,8 @@
 {
+
    "pack":{
-      "pack_format":12,
+      "pack_format":PACK_VERSION,
       "description":"Remove Christmas Chests"
    }
+
 }

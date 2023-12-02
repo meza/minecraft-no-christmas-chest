@@ -1,0 +1,26 @@
+name: Release new version
+
+on:
+  workflow_dispatch:
+    inputs:
+        version:
+            description: 'Version to release'
+            required: true
+        pack_format:
+            description: 'Pack format to release'
+            required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: montudor/action-zip@v1
+        run: zip -qq -r RemoveChristmasChests-${{ github.event.inputs.version }}.zip "Remove Christmas Chests"
+        name: Zip up the pack
+      - name: Save the zip as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: RemoveChristmasChests-${{ github.event.inputs.version }}.zip
+          path: |
+            RemoveChristmasChests-${{ github.event.inputs.version }}.zip
