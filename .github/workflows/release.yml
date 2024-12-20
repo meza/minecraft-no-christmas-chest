@@ -4,10 +4,7 @@ on:
   workflow_dispatch:
     inputs:
         version:
-            description: 'Version to release'
-            required: true
-        pack_format:
-            description: 'Pack format to release'
+            description: 'Minecraft version to release for'
             required: true
 
 jobs:
@@ -17,8 +14,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install zip
         uses: montudor/action-zip@v1
-      - name: Replace the pack format
-        run: sed -i "s/PACK_VERSION/${{ github.event.inputs.pack_format }}/g" "Remove Christmas Chests/pack.mcmeta"
       - run: cd "Remove Christmas Chests" && zip -qq -r ../RemoveChristmasChests-${{ github.event.inputs.version }}.zip .
         name: Zip up the pack
       - name: Save the zip as an artifact
