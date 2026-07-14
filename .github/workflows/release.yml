@@ -9,7 +9,7 @@ on:
 
 jobs:
   release:
-    runs-on: self-hosted
+    runs-on: meza-ubuntu-slim
     steps:
       - uses: actions/checkout@v2
       - name: Install zip
